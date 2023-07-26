@@ -3,7 +3,7 @@ ENV HOME_DIR /app/posts
 WORKDIR $HOME_DIR
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-COPY . .
-ENTRYPOINT ["python3"]
+COPY . $HOME_DIR
+EXPOSE 8001
 CMD ["python3","main.py"]
 
